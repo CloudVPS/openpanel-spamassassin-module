@@ -1,0 +1,12 @@
+gdbmopen("/etc/openpanel/spamassassin/settings.dat", "R")
+labelat=gdbmfetch("$LOGNAME-label","D", "nofilter")
+dropat=gdbmfetch("$LOGNAME-drop","D", "nofilter")
+if( $labelat ne "nofilter")
+{
+	xfilter "spamassassin --cf='required_score $labelat'"
+	if( /^X-Spam-Level: \*{$dropat,}/ )
+	{
+		log "dropping spam message "
+		exit
+	}
+}

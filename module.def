@@ -1,0 +1,50 @@
+# This file is part of OpenPanel - The Open Source Control Panel
+# OpenPanel is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU General Public License as published by the Free 
+# Software Foundation, using version 3 of the License.
+#
+# Please note that use of the OpenPanel trademark may be subject to additional 
+# restrictions. For more information, please visit the Legal Information 
+# section of the OpenPanel website on http://www.openpanel.com/
+# ============================================================================
+# OpenPanel SpamAssassin.module for virus and spam filtering.
+# ============================================================================
+module SpamAssassin			< uuid 618e6608-2cf5-4b4e-9c55-c1aa155fc158
+							< version 1.0
+							< languages en_EN
+							< apitype json
+							< license GPLv3
+							< author OpenPanel
+							< url http://www.openpanel.com/
+
+# ============================================================================
+# CLASSES
+# ============================================================================
+class Mail:SpamAssassin		        < uuid a45959cc-13a0-4db2-a6d2-d839ceef1107
+							< version 1
+							< requires Mail
+							< indexing manual
+							< uniquein parent
+							< singleton SpamAssassin
+							< shortname SpamAssassin
+							< title Spam
+							< description SpamAssassin mail filter
+							< explanation SpamAssassin.html
+							< emptytext Mail filtering has not been configured for this domain yet.
+							< formmargin -20
+
+							< capabilities create delete update
+
+        string id                       : id < flags enabled
+							
+	string label_at 		: Threshold for spam tag in subject
+							< regexp ^-?[0-9]+(\.[0-9]+)?$
+							< example 4.8
+							< default 5.0
+
+	string drop_at	 	    : Threshold for dropping spam
+							< regexp ^-?[0-9]+$
+							< example 7
+							< default 7
+
+	
