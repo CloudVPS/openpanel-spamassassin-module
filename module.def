@@ -20,14 +20,14 @@ module SpamAssassin			< uuid 618e6608-2cf5-4b4e-9c55-c1aa155fc158
 # ============================================================================
 # CLASSES
 # ============================================================================
-class Mail:SpamAssassin		        < uuid a45959cc-13a0-4db2-a6d2-d839ceef1107
+class Mail:SpamAssassin		< uuid a45959cc-13a0-4db2-a6d2-d839ceef1107
 							< version 1
 							< requires Mail
 							< indexing manual
 							< uniquein parent
 							< singleton SpamAssassin
 							< shortname SpamAssassin
-							< title Spam
+							< title Spam filtering
 							< description SpamAssassin mail filter
 							< explanation SpamAssassin.html
 							< emptytext Mail filtering has not been configured for this domain yet.
@@ -35,7 +35,7 @@ class Mail:SpamAssassin		        < uuid a45959cc-13a0-4db2-a6d2-d839ceef1107
 
 							< capabilities create delete update
 
-        string id                       : id < flags enabled
+    string id               : id < flags enabled
 							
 	string label_at 		: Threshold for spam tag in subject
 							< regexp ^-?[0-9]+(\.[0-9]+)?$
