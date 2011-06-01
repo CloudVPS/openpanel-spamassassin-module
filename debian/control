@@ -7,6 +7,6 @@ Standards-Version: 3.7.2
 
 Package: openpanel-mod-spamassassin
 Architecture: any
-Depends: spamassassin, openpanel-mod-postfixcourier, openpanel-core, python-openpanel, ${shlibs:Depends}, ${misc:Depends}
+Depends: spamassassin, openpanel-mod-postfixcourier, openpanel-core, python-openpanel, python-gdbm, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenPanel module to manage SpamAssassin
  Openpanel SpamAssassin management module
