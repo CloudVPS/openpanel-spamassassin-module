@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5), openpanel-dev (>= 1.1)
 Standards-Version: 3.7.2
 
 Package: openpanel-mod-spamassassin
-Architecture: any
+Architecture: all
 Depends: spamassassin, openpanel-mod-postfixcourier (>= 1.1), openpanel-core (>= 1.1), python-openpanel (>= 1.1), python-gdbm, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenPanel module to manage SpamAssassin
  Openpanel SpamAssassin management module
