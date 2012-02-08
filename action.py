@@ -7,11 +7,13 @@ class SpamAssassinModule(panelmodule):
     def getconfig(self):
         extra = {
             'System:SpamPrefs': {
-                'subject':'[SPAM]',
-                'reportsafe':'off',
-                'contact':'postmaster@localhost'
+                'spamassassin': {
+                    'subject':'[SPAM]',
+                    'reportsafe':'off',
+                    'contact':'postmaster@localhost'
+                }
             }
-          }
+        }
         
         return extra
         
@@ -52,7 +54,7 @@ class SpamAssassinModule(panelmodule):
                 authd.installfile ("local.cf","/etc/spamassassin")
             
             def delete(self, objectid, tree):
-            	return
+                return
             
             update = create
 
