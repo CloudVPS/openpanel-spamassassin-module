@@ -1,0 +1,6 @@
+#!/bin/sh
+cat << _EOF_
+46
+{"OpenCORE:Result":{"code":0,"message":"OK"}}
+_EOF_
+

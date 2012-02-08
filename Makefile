@@ -19,6 +19,7 @@ install:
 	mkdir -p ${DESTDIR}/etc/maildrop.d
 	cp 50spamassassin.rc ${DESTDIR}/etc/maildrop.d
 	install -m 755 action.py ${DESTDIR}/var/openpanel/modules/SpamAssassin.module/action
+	install -m 755 updateok ${DESTDIR}/var/openpanel/modules/SpamAssassin.module/updateok
 	cp     module.xml          ${DESTDIR}/var/openpanel/modules/SpamAssassin.module/module.xml
 	install -m 755 verify      ${DESTDIR}/var/openpanel/modules/SpamAssassin.module/verify
 	cp     tests/test.py          ${DESTDIR}/var/openpanel/modules/SpamAssassin.module/tests/
