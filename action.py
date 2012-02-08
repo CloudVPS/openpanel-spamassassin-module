@@ -53,7 +53,8 @@ class SpamAssassinModule(panelmodule):
                 elif object["reportsafe"] == 'plain':
                     f.write ("report_safe 2\n")
                 f.close ()
-                authd.installfile ("local.cf","/etc/spamassassin")
+                authd.do ("installfile","local.cf","/etc/spamassassin")
+                authd.do ('quit')
             
             def delete(self, objectid, tree):
                 return
