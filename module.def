@@ -10,7 +10,7 @@
 # OpenPanel SpamAssassin.module for virus and spam filtering.
 # ============================================================================
 module SpamAssassin			< uuid 618e6608-2cf5-4b4e-9c55-c1aa155fc158
-							< version 1.0
+							< version 2.0
 							< languages en_EN
 							< apitype json
 							< license GPLv3
