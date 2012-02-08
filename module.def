@@ -60,6 +60,8 @@ class System:SpamPrefs		< uuid 6ccd117d-ad8a-4d5c-ad73-43cf3f0d1ceb
 							< sortindex 263
 							
 							< capabilities update
+	
+	string id				: id < flags enabled
 							
 	string subject			: Text to add to subject of spam messages
 							< textwidth 10

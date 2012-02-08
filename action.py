@@ -40,13 +40,13 @@ class SpamAssassinModule(panelmodule):
         class SpamPrefs(panelclass):
             def create(self, objectid, object, tree):
                 f = open ('/var/openpanel/conf/staging/SpamAssassin/local.cf','w')
-                f.write ("rewrite_header Subject %s \n" % object("subject"))
-                f.write ("report_contact %s\n" %object("contact"))
-                if object("reportsafe") == 'off':
+                f.write ("rewrite_header Subject %s \n" % object["subject"])
+                f.write ("report_contact %s\n" %object["contact"])
+                if object["reportsafe"] == 'off':
                     f.write ("report_safe 0\n")
-                elif object("reportsafe") == 'mime':
+                elif object["reportsafe"] == 'mime':
                     f.write ("report_safe 1\n")
-                elif object("reportsafe") == 'plain':
+                elif object["reportsafe"] == 'plain':
                     f.write ("report_safe 2\n")
                 f.close ()
                 authd.installfile ("local.cf","/etc/spamassassin")
