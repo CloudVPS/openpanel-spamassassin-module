@@ -8,6 +8,8 @@ class SpamAssassinModule(panelmodule):
         extra = {
             'System:SpamPrefs': {
                 'spamassassin': {
+                	'.parent':'prefs',
+                	'.parentclass':'OpenCORE:Prefs',
                     'subject':'[SPAM]',
                     'reportsafe':'off',
                     'contact':'postmaster@localhost'
