@@ -13,6 +13,7 @@ module SpamAssassin			< uuid 618e6608-2cf5-4b4e-9c55-c1aa155fc158
 							< version 2.0
 							< languages en_EN
 							< apitype json
+							< getconfig true
 							< license GPLv3
 							< author OpenPanel
 							< url http://www.openpanel.com/
