@@ -47,4 +47,43 @@ class Mail:SpamAssassin		< uuid a45959cc-13a0-4db2-a6d2-d839ceef1107
 							< example 7
 							< default 7
 
+# ----------------------------------------------------------------------------
+class System:SpamPrefs		< uuid 6ccd117d-ad8a-4d5c-ad73-43cf3f0d1ceb
+							< version 1
+							< requires OpenCORE:Prefs
+							< indexing manual
+							< singleton spamassassin
+							< uniquein parent
+							< shortname spam
+							< title SpamAssassin
+							< description SpamAssassin Settings
+							< sortindex 263
+							
+							< capabilities update
+							
+	string subject			: Text to add to subject of spam messages
+							< textwidth 10
+							
+	enum reportsafe			: Spam message handling
+							
+	string contact			: Contact email-address that will show up in reports
+							< textwidth 40
+							< example postmaster@example.net
+							< regexp [:email:]
+
+# ============================================================================
+# ENUMS
+# ============================================================================
+enum reportsafe
+	value off				: Keep Intact
+	value mime				: Wrap original as attachment
+	value plain				: Add spam as plaintext
 	
+# ============================================================================
+# AUTHD
+# ============================================================================
+authd fileops
+	match local.cf			: /etc/spamassassin
+							< user root
+							< group root
+							< perms 0644
